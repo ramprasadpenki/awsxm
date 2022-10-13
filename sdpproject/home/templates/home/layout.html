@@ -1,0 +1,140 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <link rel="stylesheet" href="../../static/home/styles.css">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-primary">-->
+<!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--    <span class="navbar-toggler-icon"></span>-->
+<!--  </button>-->
+
+<!--  <div class="collapse navbar-collapse" id="navbarColor01">-->
+<!--    <ul class="navbar-nav mr-auto">-->
+<!--      <li class="nav-item active">-->
+<!--        <a class="nav-link" href="#">Home-->
+<!--          <span class="sr-only">(current)</span>-->
+<!--        </a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="#">Features</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="#">Pricing</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="#">About</a>-->
+<!--      </li>-->
+
+<!--    </ul>-->
+<!--    <form class="form-inline my-2 my-lg-0">-->
+
+<!--      <button class="btn btn-secondary my-2 my-sm-2" type="submit">login</button>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</nav>-->
+<!--{% block content %}-->
+
+<!--{% endblock %}-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<style>
+    .bg-nav{
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+
+.mt-150{
+    margin-top : 135px;
+}
+
+</style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+<header class="bg-nav text-light ">
+
+<nav class="navbar navbar-expand-lg text-light bg-nav">
+  <div class="container-fluid">
+    <h5 class="navbar-brand text-light">Donar World</h5>
+      {% if customer %}
+      <h4>hello,{{ customer.username }}</h4>
+      {% else %}
+      {% endif %}
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+        <span></span>
+              <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-light" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-light" href="{% url 'request' %}">Request Blood</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-light" href="{% url 'donate' %}">Donate Blood</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-light" href="{% url 'admin_user' %}">Admin</a>
+          </a>
+
+        </li>
+
+        <li class="nav-item">
+            {% if error1 or value %}
+            <a href="{% url 'logout' %}">
+               <button class="btn btn-outline-success" type="submit">Logout</button>
+            </a>
+            {% else %}
+            <a href="{% url 'login' %}">
+                 <button class="btn btn-outline-success" type="submit">Login/Signup</button>
+            </a>
+            {% endif %}
+
+
+
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+</nav>
+</header>
+
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
